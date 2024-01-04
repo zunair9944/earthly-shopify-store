@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "729e8150-1fe2-4435-adad-f3a82bab02d5": {
+      "type": "local-delivery-01",
+      "settings": {
+        "textarea": "NOW <span>ONLY<\/span> DELIVERING IN NYC",
+        "textarea-00": "<strong>NATIONWIDE SHIPPING COMING SOON<\/strong> | ALWAYS SUSTAINABLY PACKAGED*"
+      }
+    },
+    "807dbb51-3287-4478-9d9e-8909afa9ad64": {
+      "type": "local-delivery-02",
+      "settings": {
+        "heading": "FREE DELIVERY IN NEW YORK CITY!",
+        "heading-1": "WANT PINTS NOW?",
+        "image": "shopify:\/\/shop_images\/img2.png",
+        "btn-1": "START YOUR ORDER",
+        "url-1": "shopify:\/\/pages\/start-order",
+        "btn": "Where can I buy in person?",
+        "url": "",
+        "zip": "1234,4321,1122,11211"
+      }
+    }
+  },
+  "order": [
+    "729e8150-1fe2-4435-adad-f3a82bab02d5",
+    "807dbb51-3287-4478-9d9e-8909afa9ad64"
+  ]
+}

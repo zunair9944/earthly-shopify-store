@@ -1,0 +1,84 @@
+  <div class="three-col__parent">
+    <div class="custom-container">
+      <div class="three-section">
+        <div class="group-section">
+        {% if section.settings.textarea != blank %}
+          <h2 class="primary-heading">{{ section.settings.textarea }}</h2>
+        {% endif %}  
+          <div class="group-slider homepage-slider">
+          {% for block in section.blocks %}  
+            <div>
+              <div class="card">
+              {% if block.settings.image != blank %}
+                <div>
+                  <img class="img-box" src="{{ block.settings.image | img_url: "x1024" }}" alt="img" loading="lazy" />
+                </div>
+              {% endif %}   
+              {% if block.settings.text != blank %}
+                <h5>{{ block.settings.text }}</h5>
+              {% endif %}
+              {% if block.settings.textarea-00 != blank %}
+                <p>{{ block.settings.textarea-00 }}</p>
+              {% endif %}  
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>  
+
+
+
+
+{% schema %}
+  {
+    "name": "index-06",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "textarea",
+        "label": "Heading",
+        "default": "SO WE REIMAGINED IT <br>FROM THE GROUND UP."
+      }
+    ],
+    "blocks":[
+      {
+      "type": "image_picker",
+      "name": "Block",
+      "settings":[
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Select Image"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Heading",
+            "default": "ORGANIC DATES"   
+          },
+           {
+            "type": "textarea",
+            "id": "textarea-00",
+            "label": "Content",
+            "default": "High in Insoluble Fiber High in Antioxidants Reduces Inflammation High Vitamins and Minerals Natural Low Glycemic Sweetener"   
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "index-06"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,304 @@
+  
+  <div class="order-page">
+    {% if section.settings.heading != blank %}
+	<div class="custom-container">
+    	<h2 class="primary-heading">{{ section.settings.heading }}</h2>
+		{% if section.settings.sub-heading != blank %}<p>{{ section.settings.sub-heading }}</p>{% endif %}
+    </div>
+    {% endif %}
+    
+    <form class="order-form" action="/cart/add" method="post">
+      <div class="custom-container">
+        <div class="products-holder">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'product' -%}
+                {% assign product = block.settings.product %}
+                {% assign productimg = block.settings.product-img %}
+                {%- liquid
+                  assign media_to_render = product.featured_media.id
+                  for variant in product.variants
+                    assign media_to_render = media_to_render | append: variant.featured_media.id | append: ' '
+                  endfor
+                -%}
+                <div class="col">
+                  <h5>{{ product.title }}</h5>
+                  <div class="img-box">
+                      {% if productimg != blank %}
+                        <img
+                            srcset="{%- if productimg.width >= 165 -%}{{ productimg | image_url: width: 165 }} 165w,{%- endif -%}
+                              {%- if productimg.width >= 360 -%}{{ productimg | image_url: width: 360 }} 360w,{%- endif -%}
+                              {%- if productimg.width >= 535 -%}{{ productimg | image_url: width: 535 }} 535w,{%- endif -%}
+                              {%- if productimg.width >= 750 -%}{{ productimg | image_url: width: 750 }} 750w,{%- endif -%}
+                              {%- if productimg.width >= 1070 -%}{{ productimg | image_url: width: 1070 }} 1070w,{%- endif -%}
+                              {%- if productimg.width >= 1500 -%}{{ productimg | image_url: width: 1500 }} 1500w,{%- endif -%}
+                              {{ productimg | image_url }} {{ productimg.width }}w"
+                            src="{{ productimg | image_url: width: 1500 }}"
+                            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                            alt="{{ productimg.alt | escape }}"
+                            loading="lazy"
+                            width="{{ productimg.width }}"
+                            height="{{ productimg.height }}"
+                          >
+                      {% else %}
+                        {%- if product.featured_image != blank -%}
+                          <img
+                            srcset="{%- if product.featured_image.width >= 165 -%}{{ product.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+                              {%- if product.featured_image.width >= 360 -%}{{ product.featured_image | image_url: width: 360 }} 360w,{%- endif -%}
+                              {%- if product.featured_image.width >= 535 -%}{{ product.featured_image | image_url: width: 535 }} 535w,{%- endif -%}
+                              {%- if product.featured_image.width >= 750 -%}{{ product.featured_image | image_url: width: 750 }} 750w,{%- endif -%}
+                              {%- if product.featured_image.width >= 1070 -%}{{ product.featured_image | image_url: width: 1070 }} 1070w,{%- endif -%}
+                              {%- if product.featured_image.width >= 1500 -%}{{ product.featured_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                              {{ product.featured_image | image_url }} {{ product.featured_image.width }}w"
+                            src="{{ product.featured_image | image_url: width: 1500 }}"
+                            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                            alt="{{ product.featured_image.alt | escape }}"
+                            loading="lazy"
+                            width="{{ product.featured_image.width }}"
+                            height="{{ product.featured_image.height }}"
+                          >
+                        {%- else -%}
+                          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                        {%- endif -%}
+                      {% endif %}
+                      {% comment %}<img src="https://cdn.shopify.com/s/files/1/0647/6840/9840/files/img3.png?v=1665427504">{% endcomment %}
+                      <div class="custom-arrow" data-product-id="{{ product.variants.first.id }}">
+                          <div class="in-cart" style="display:none">* <span></span> already in cart</div>
+                          <select class="select-Qty" id="product-{{ product.id }}" data-cartQty="0">
+                              <option value="0">Select Qty</option>
+                              <option value="1">Qty: 1</option>
+                              <option value="2">Qty: 2</option>
+                              <option value="3">Qty: 3</option>
+                              <option value="4">Qty: 4</option>
+                          </select>  
+                      </div>
+                  </div>
+                </div>
+              {%- endcase -%}
+            {%- endfor -%}
+            {% comment %}
+            <div class="custom-arrow" data-product-id="{{ product.variants.first.id }}">
+                  <select class="select-Qty" id="product-{{ product.id }}">
+                      <option value="0">Select Qty</option>
+                      <option value="1">Qty: 1</option>
+                      <option value="2">Qty: 2</option>
+                      <option value="3">Qty: 3</option>
+                      <option value="4">Qty: 4</option>
+                  </select>  
+              </div>
+            <div class="custom-arrow" data-product-id="{{ product.variants.first.id }}">
+                  <select class="select-Qty" id="product-{{ product.id }}">
+                      <option value="0">Select Qty</option>
+                      <option value="1">Qty: 1</option>
+                      <option value="2">Qty: 2</option>
+                      <option value="3">Qty: 3</option>
+                      <option value="4">Qty: 4</option>
+                  </select>  
+              </div>
+            <div class="custom-arrow" data-product-id="{{ product.variants.first.id }}">
+                  <select class="select-Qty" id="product-{{ product.id }}">
+                      <option value="0">Select Qty</option>
+                      <option value="1">Qty: 1</option>
+                      <option value="2">Qty: 2</option>
+                      <option value="3">Qty: 3</option>
+                      <option value="4">Qty: 4</option>
+                  </select>  
+              </div>
+            {% endcomment %}
+        </div>
+        <div class="field-section">
+            <h3>Which flavor(s) should we launch next? (Optional)</h3>
+            <input class="input-field" type="text" placeholder="">
+            <input type="button" name="" value="ADD TO CART" class="theme-smaller__btn">
+            <div class="error error_msg" style="display:none; color:red;">*Pick 4-6 pints to continue <strong>Add to Cart</strong></div>
+            <div class="error error_msg_added" style="display:none; color:red;">*already added to cart</div>
+        </div>
+      </div>
+    </form>
+ 
+
+  
+  </div>
+</div>
+<style>
+  .in-cart {
+  	position: absolute;
+  	top: -40px;
+  	font-size: 12px;
+  	text-align: center;
+  	width: 100%;
+  	color: red;
+  }
+</style>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.js"></script>
+
+<script>
+    
+    var minQty, maxQty;
+    minQty = 4;
+    maxQty = 6;
+    getProduct();
+	$(document).on('change','.select-Qty',function(){
+		$(this).addClass('selected');
+		QtySelector();
+	});
+	function QtySelector(){
+		var totalBox, totalQty, currentStatus;
+        var currentStatus = 0;
+        $('[data-cartQty]').each(function() {
+            var a;
+            a = $(this).attr('data-cartQty');
+            currentStatus += Number(a);
+        });
+		totalQty = currentStatus;
+		$('.select-Qty').each(function() {
+			var a, b,c;
+			a = $(this).val();
+            totalQty += Number(a);
+		});
+		console.log(totalQty)
+        console.log('max value is: '+maxQty)
+        if(maxQty < 4){
+            $('.theme-smaller__btn').prop('disabled',true);
+        	$('.error_msg_added').show();
+        }
+        else{
+            $('.error_msg_added').hide();
+    		if(totalQty < minQty){
+    			$('.theme-smaller__btn').prop('disabled',true);
+    			$('.error_msg').show();
+    		}else{
+    			if(totalQty > maxQty){
+    				$('.theme-smaller__btn').prop('disabled',true);
+    				$('.error_msg').show();
+    			}else{
+    				$('.theme-smaller__btn').prop('disabled',false);
+    				$('.error_msg').hide();
+    			}
+    		}
+        }
+			
+		
+	}
+	$(document).on('click','.theme-smaller__btn',function(){
+		var items = [];
+		$('[data-product-id]').each(function() {
+			var a, b,c;
+			a = $(this).attr('data-product-id');
+			b = $(this).find('select').val();
+			c = {quantity: b, id: a}
+			items.push(c)
+		});
+		$.ajax({
+			type: "POST",
+			url: '/cart/add.js',
+			data: { items: items },
+			dataType: 'json',
+			success: addToCartOk,
+			error: addToCartFail
+		});
+	});
+	
+	function getProduct(){
+		var items, itemsCart;
+		items = [];
+		itemsCart = [];
+		$.ajax({
+			type: 'GET',
+			url: '/cart.json',
+			dataType: 'jsonp',
+			success: function(data) { 
+				//console.log(data.items);
+				var currentItems = data.items;
+				$.each(data.items,function(i,v){
+					console.log(v.variant_id)
+					var a, b,c;
+					a = v.variant_id;
+					b = v.quantity;
+					
+					c = {quantity: b, id: a}
+					itemsCart.push(c)
+					$('[data-product-id="'+a+'"]').attr({'data-cartQty':b});
+                    $('[data-product-id="'+a+'"] .in-cart').show();
+                    $('[data-product-id="'+a+'"] .in-cart > span').text(b);
+				});
+                /*var currentStatus = 0;
+                $('[data-cartQty]').each(function() {
+        			var a, b,c;
+        			a = $(this).attr('data-cartQty');
+        			currentStatus += Number(a);
+        		});
+                console.log(currentStatus)
+                console.log(maxQty - currentStatus )
+                maxQty = maxQty - currentStatus;
+                
+                if(currentStatus >= maxQty){
+        			$('.theme-smaller__btn').prop('disabled',true);
+        			$('.error_msg_added').show();
+        		}else{
+                    $('.theme-smaller__btn').prop('disabled',false);
+                    $('.error_msg_added').hide();
+        		}*/
+			}
+		});
+       
+	}
+    function addToCartOk(product) { 
+		//alert('all products added');
+        window.location.href = '/cart';
+	}
+    function addToCartFail(obj, status) {
+    }
+</script>
+
+{% schema %}
+{
+  "name": "Start Order",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "BUILD YOUR SELF-CARE PACKAGE",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "sub-heading",
+      "default": "*Pick your <a href='#'>4-6 pints</a> to build your custom case",
+      "label": "Sub Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Add Product",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "product-img",
+          "label": "Select Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Start Order",
+      "blocks": [
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

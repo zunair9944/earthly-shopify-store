@@ -1,0 +1,152 @@
+<div class="faq-page">
+  <div class="custom-container">
+	<div class="accordian-block">
+      {% for block in section.blocks %}
+		<button class="accordion">{{ block.settings.heading }}</button>
+		<div class="accordion-content">
+    		<p>{{ block.settings.content }}</p>
+		</div>
+       {% endfor %} 
+	</div>
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "faq-01",
+    "blocks":[
+      {
+        "type": "text",
+        "name": "Faq Block",
+        "settings":[
+          {
+            "type": "textarea",
+            "id": "heading",
+            "label": "Faq Qs",
+            "default": "Website Design and Development"
+          },
+          {
+            "type": "textarea",
+            "id": "content",
+            "label": "Faq Ans",
+            "default": "Whether you need a wordpress website, a shopify site, or a custom fullstack application, we got you! No matter what kind of website or application you need, it will be made with clean and maintable code that follows modern development standards. We also have top notch designers that can make unique designs that will make your website look different and unique. Not to mention that we also provide 24/7 website maintenance so that you get all the support you need."
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "faq-01"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+  .faq-page {
+  padding: 100px 0;
+  overflow: hidden;
+  font-size: 20px;
+  line-height: 32px
+}
+
+.faq-page .primary-heading {
+  margin: 0 0 70px;
+}
+
+.accordian-block {
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.accordian-block button.accordion {
+  width: 100%;
+  background-color: #442A39;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 15px 15px 15px 50px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+  margin: 0 0 10px;
+  position: relative;
+}
+
+.accordian-block button.accordion:after {
+  font-family: FontAwesome;
+  content: "\f067";
+  font-family: "fontawesome";
+  font-size: 18px;
+  color: #fff;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  z-index: 99;
+}
+
+.accordian-block button.accordion.is-open:after {
+  content: "\f00d";
+}
+
+.accordian-block button.accordion:hover,
+.accordian-block button.accordion.is-open {
+  background-color: #6d445c;
+}
+
+.accordian-block .accordion-content {
+  background-color: white;
+  box-shadow: inset 0 0 1px 0 #ccc;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width: 767.98px) {
+  .faq-page {
+    padding: 50px 0;
+  }
+
+  .faq-page .primary-heading {
+    margin: 0 0 30px;
+  }
+
+  .accordian-block { 
+    width: 100%;
+  }
+
+  .accordian-block button.accordion {
+    font-size: 15px;
+  }
+}
+{% endstylesheet %}
+
+{% javascript %}
+  const accordionBtns = document.querySelectorAll(".accordion");
+
+accordionBtns.forEach((accordion) => {
+  accordion.onclick = function () {
+    this.classList.toggle("is-open");
+
+    let content = this.nextElementSibling;
+    console.log(content);
+
+    if (content.style.maxHeight) {
+      //this is if the accordion is open
+      content.style.maxHeight = null;
+    } else {
+      //if the accordion is currently closed
+      content.style.maxHeight = content.scrollHeight + "px";
+      console.log(content.style.maxHeight);
+    }
+  };
+});
+
+{% endjavascript %}

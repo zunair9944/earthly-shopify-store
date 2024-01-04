@@ -1,0 +1,77 @@
+  <div class="three-col__parent">
+    <div class="custom-container">
+      <div class="three-section">
+       {% if section.settings.heading != blank %} 
+        <h2 class="primary-heading">{{ section.settings.heading }}</h2>
+       {% endif %}  
+        <div class="columns">
+          {% for block in section.blocks %}
+          <div class="col">
+            {% if block.settings.image != blank %}
+            <div class="img-holder">
+              <img src="{{ block.settings.image | img_url: "x1024" }}" alt="img" loading="lazy">
+            </div>
+            {% endif %}  
+            {% if block.settings.textarea != blank %}
+            <h5>{{ block.settings.textarea }}</h5>
+            {% endif %}
+            {% if block.settings.textarea-00 != blank %}
+            <p>{{ block.settings.textarea-00 }}</p>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% schema %}
+  {
+    "name": "index-05",
+    "settings": [
+      {
+        "type": "textarea",
+        "label": "Main Heading",
+        "id": "heading",
+        "default": "WE LOVE ICE CREAM, BUT IT HAS A DARK SIDE..."
+      }
+    ],
+    "max_blocks": 3,
+    "blocks":[
+      {
+        "type": "image_picker",
+        "name": "Block",
+        "settings":[
+          {
+            "type": "image_picker",
+            "label": "Add Image",
+            "id": "image"
+          },
+          {
+            "type": "textarea",
+            "label": "Heading",
+            "id": "textarea",
+            "default": "Refind/added sugar & fake sweeteners"
+          },
+          {
+            "type": "textarea",
+            "label": "Content",
+            "id": "textarea-00"
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "index-05"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,75 @@
+<header id="header">
+    <div class="custom-container">
+      
+      <div class="logo">
+        <a href="{{ shop.url }}" title="{{ shop.name }}">
+          {% if section.settings.logo != blank %}
+            <img src="{{ section.settings.logo | img_url: 'x1024' }}" alt="logo" loading="lazy">
+          {% else %}  
+            <strong>{{ shop.name }}</strong>
+          {% endif %}
+        </a>
+      </div>
+      
+      <button class="mobile-sidebar"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></button>
+      
+      <nav id="nav">
+        <button class="close-menu"><i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
+        
+        <ul>
+         {% for link in section.settings.menu.links %} 
+          {% if forloop.index < 4 %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endif %}  
+         {% endfor %} 
+        </ul>
+        <ul>
+          {% for link in section.settings.menu.links %} 
+            {% if forloop.index > 3 %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endif %}  
+         {% endfor %} 
+
+          <li>
+            <a style="position: relative;" href="{{ routes.cart_url }}">
+              <img src="https://cdn.shopify.com/s/files/1/0647/6840/9840/files/icon.png?v=1665080937">
+              <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+              {%- if cart != empty -%}
+                <div class="cart-count-bubble">
+                  {%- if cart.item_count < 100 -%}
+                    <span aria-hidden="true">{{ cart.item_count }}</span>
+                  {%- endif -%}
+                  <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                </div>
+              {%- endif -%}
+            </a>
+          </li> 
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+{% schema %}
+  {
+    "name": "Header-New",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Header Logo"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "default": "main-menu",
+        "label": "Header Menu"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

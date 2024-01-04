@@ -1,0 +1,365 @@
+{
+  "sections": {
+    "e1533f48-2f2e-4450-bc73-da2dab2f6c50": {
+      "type": "index-01",
+      "blocks": {
+        "d77f3502-a210-465a-b28a-23e70ddb1a5b": {
+          "type": "text",
+          "settings": {
+            "text": "VEGAN"
+          }
+        },
+        "ed7d604d-ce3d-49f5-900e-bfeccfa27ea2": {
+          "type": "text",
+          "settings": {
+            "text": "PALEO"
+          }
+        },
+        "f4326472-c683-49d3-82c0-9043b573dd7b": {
+          "type": "text",
+          "settings": {
+            "text": "NO REFINED SUGAR"
+          }
+        }
+      },
+      "block_order": [
+        "d77f3502-a210-465a-b28a-23e70ddb1a5b",
+        "ed7d604d-ce3d-49f5-900e-bfeccfa27ea2",
+        "f4326472-c683-49d3-82c0-9043b573dd7b"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/img1.png",
+        "heading": "(ACTUALLY) PLANT-BASED FROZEN GOODNESS",
+        "btn": "SHOP NOW",
+        "url": ""
+      }
+    },
+    "ad4b6fa6-1bb3-479f-89d7-ce09e3618e75": {
+      "type": "index-02",
+      "blocks": {
+        "d3884476-2630-4ff6-9abf-6f4a8f63665f": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon01.png",
+            "textarea": "VEGAN <br> PLANT-BASED"
+          }
+        },
+        "a0113737-2656-45cb-86a8-87bd4647c51f": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon02.png",
+            "textarea": "PALEO <br> FRIENDLY"
+          }
+        },
+        "47d3a597-6374-4ff8-b09b-ad735d624aa1": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon03.png",
+            "textarea": "FRUIT <br> SWEETENED"
+          }
+        },
+        "cd49aa08-00f4-40bc-ab4a-354e4c55677f": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon04.png",
+            "textarea": "ORGANIC <br> INGREDIENTS"
+          }
+        },
+        "61ec1a9d-5764-4493-b112-1519462ddf68": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon05.png",
+            "textarea": "NO REFINED <br> SUGAR"
+          }
+        },
+        "3f1260ab-f0b3-4c08-9f23-edcf776289e8": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon06.png",
+            "textarea": "NOTHING <br> ARTIFICAL"
+          }
+        },
+        "fde07a10-0ec4-4b29-a813-7911b9221bd3": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon07.png",
+            "textarea": "NO GLUTEN, SOY. <br> CORN, OR GMOS"
+          }
+        },
+        "3c01d25b-685c-43e3-a363-a8cb227ae5b8": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon08.png",
+            "textarea": "NO GUMS OR <br> STABILIZERS"
+          }
+        }
+      },
+      "block_order": [
+        "d3884476-2630-4ff6-9abf-6f4a8f63665f",
+        "a0113737-2656-45cb-86a8-87bd4647c51f",
+        "47d3a597-6374-4ff8-b09b-ad735d624aa1",
+        "cd49aa08-00f4-40bc-ab4a-354e4c55677f",
+        "61ec1a9d-5764-4493-b112-1519462ddf68",
+        "3f1260ab-f0b3-4c08-9f23-edcf776289e8",
+        "fde07a10-0ec4-4b29-a813-7911b9221bd3",
+        "3c01d25b-685c-43e3-a363-a8cb227ae5b8"
+      ],
+      "settings": {
+        "heading": "EVERYTHING YOU THOUGHT ICE CREAM COULD NEVER BE.",
+        "btn": "LEARN MORE",
+        "url": ""
+      }
+    },
+    "fb8cd542-1cec-4b5f-a456-d8e0201c51e6": {
+      "type": "index-3",
+      "blocks": {
+        "85896f19-8040-46fa-9cdb-3741a8c25ff0": {
+          "type": "image_picker",
+          "settings": {
+            "flavor": "shopify:\/\/shop_images\/product01.jpg",
+            "flavor-name": "CACAO"
+          }
+        },
+        "44ab20c5-6ddb-4741-8a0c-adbac9c9ef4e": {
+          "type": "image_picker",
+          "settings": {
+            "flavor": "shopify:\/\/shop_images\/product02.jpg",
+            "flavor-name": "STRAWBERRY"
+          }
+        },
+        "4db07621-a2f3-44ad-a47f-e2a8e0a01c21": {
+          "type": "image_picker",
+          "settings": {
+            "flavor": "shopify:\/\/shop_images\/product03.jpg",
+            "flavor-name": "MAPLE + <br>SALTED PECAN"
+          }
+        },
+        "716bca31-015e-4684-8c13-1aee3b93b41f": {
+          "type": "image_picker",
+          "settings": {
+            "flavor": "shopify:\/\/shop_images\/product04.jpg",
+            "flavor-name": "CACAO + <br>PEANUT BUTTER"
+          }
+        }
+      },
+      "block_order": [
+        "85896f19-8040-46fa-9cdb-3741a8c25ff0",
+        "44ab20c5-6ddb-4741-8a0c-adbac9c9ef4e",
+        "4db07621-a2f3-44ad-a47f-e2a8e0a01c21",
+        "716bca31-015e-4684-8c13-1aee3b93b41f"
+      ],
+      "settings": {
+        "heading": "OUR FLAVORS",
+        "btn": "SHOP FLAVORS",
+        "url": ""
+      }
+    },
+    "bfcaef0b-e0b4-4589-9c8a-fe88421c5cd6": {
+      "type": "index-04",
+      "blocks": {
+        "bed47a72-a4f9-4c6e-acfe-f6b2d9d2888a": {
+          "type": "text",
+          "settings": {
+            "richtext": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "text": "Hannah Y."
+          }
+        },
+        "9aec567f-9356-42a6-9e6b-e3768c9ab186": {
+          "type": "text",
+          "settings": {
+            "richtext": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "text": "Hannah Y."
+          }
+        },
+        "1c218d59-3167-40aa-b23e-ae7e0db64190": {
+          "type": "text",
+          "settings": {
+            "richtext": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "text": "Hannah Y."
+          }
+        },
+        "5d37a0e5-8323-4317-be51-7c56464acb7f": {
+          "type": "text",
+          "settings": {
+            "richtext": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "text": "Hannah Y."
+          }
+        },
+        "455bbac1-e86f-4fd1-80ea-bb5f575c37d3": {
+          "type": "text",
+          "settings": {
+            "richtext": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "text": "Hannah Y."
+          }
+        },
+        "c76a133c-35b4-478a-9277-f6d0f895f706": {
+          "type": "text",
+          "settings": {
+            "richtext": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "text": "Hannah Y."
+          }
+        },
+        "6cabbc34-6d12-404f-a934-28ca12836be2": {
+          "type": "text",
+          "settings": {
+            "richtext": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "text": "Hannah Y."
+          }
+        }
+      },
+      "block_order": [
+        "bed47a72-a4f9-4c6e-acfe-f6b2d9d2888a",
+        "9aec567f-9356-42a6-9e6b-e3768c9ab186",
+        "1c218d59-3167-40aa-b23e-ae7e0db64190",
+        "5d37a0e5-8323-4317-be51-7c56464acb7f",
+        "455bbac1-e86f-4fd1-80ea-bb5f575c37d3",
+        "c76a133c-35b4-478a-9277-f6d0f895f706",
+        "6cabbc34-6d12-404f-a934-28ca12836be2"
+      ],
+      "settings": {
+        "textarea": "PLANT-BASED = CREAMY??"
+      }
+    },
+    "290441a5-3ba4-44fe-a174-2d0545a72ce4": {
+      "type": "index-05",
+      "blocks": {
+        "414a4234-dff4-4204-a6e2-34afdb8c438e": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon09.png",
+            "textarea": "Refind\/added sugar & fake sweeteners",
+            "textarea-00": "High in Insoluble Fiber\n              High in Antioxidants\n              Reduces Inflammation\n              High Vitamins and Minerals\n              Natural Low Glycemic Sweetener"
+          }
+        },
+        "85f97c62-ec3d-4593-8dbc-ad90210e1fed": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon10.png",
+            "textarea": "Refind\/added sugar & fake sweeteners",
+            "textarea-00": "High in Insoluble Fiber\n              High in Antioxidants\n              Reduces Inflammation\n              High Vitamins and Minerals\n              Natural Low Glycemic Sweetener"
+          }
+        },
+        "349aa420-c006-456b-aa9f-fbc722a4ce9d": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon11.png",
+            "textarea": "Refind\/added sugar & fake sweeteners",
+            "textarea-00": "High in Insoluble Fiber\n              High in Antioxidants\n              Reduces Inflammation\n              High Vitamins and Minerals\n              Natural Low Glycemic Sweetener"
+          }
+        }
+      },
+      "block_order": [
+        "414a4234-dff4-4204-a6e2-34afdb8c438e",
+        "85f97c62-ec3d-4593-8dbc-ad90210e1fed",
+        "349aa420-c006-456b-aa9f-fbc722a4ce9d"
+      ],
+      "settings": {
+        "heading": "WE LOVE ICE CREAM, BUT IT HAS A DARK SIDE..."
+      }
+    },
+    "2e5ca511-8aa2-4a98-baaa-16242673cf17": {
+      "type": "index-06",
+      "blocks": {
+        "3767561e-5a0e-432b-914a-ec20bb620043": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_1.jpg",
+            "text": "ORGANIC DATES",
+            "textarea-00": "High in Insoluble Fiber High in Antioxidants Reduces Inflammation High Vitamins and Minerals Natural Low Glycemic Sweetener"
+          }
+        },
+        "3bf3757a-6aee-491b-9f14-296a01463cf5": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_1.jpg",
+            "text": "ORGANIC ALMONDS",
+            "textarea-00": "High in Insoluble Fiber High in Antioxidants Reduces Inflammation High Vitamins and Minerals Natural Low Glycemic Sweetener"
+          }
+        },
+        "015b0880-3ff9-4dbf-90ca-412b50d66ddb": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_1.jpg",
+            "text": "ORGANIC COCONUT",
+            "textarea-00": "High in Insoluble Fiber High in Antioxidants Reduces Inflammation High Vitamins and Minerals Natural Low Glycemic Sweetener"
+          }
+        },
+        "0f383fbc-9120-44f7-b50d-2168307990ff": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_1.jpg",
+            "text": "ORGANIC DATES",
+            "textarea-00": "High in Insoluble Fiber High in Antioxidants Reduces Inflammation High Vitamins and Minerals Natural Low Glycemic Sweetener"
+          }
+        },
+        "502e6c45-b2b4-4037-831a-05ef271efdd8": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_1.jpg",
+            "text": "ORGANIC COCONUT",
+            "textarea-00": "High in Insoluble Fiber High in Antioxidants Reduces Inflammation High Vitamins and Minerals Natural Low Glycemic Sweetener"
+          }
+        }
+      },
+      "block_order": [
+        "3767561e-5a0e-432b-914a-ec20bb620043",
+        "3bf3757a-6aee-491b-9f14-296a01463cf5",
+        "015b0880-3ff9-4dbf-90ca-412b50d66ddb",
+        "0f383fbc-9120-44f7-b50d-2168307990ff",
+        "502e6c45-b2b4-4037-831a-05ef271efdd8"
+      ],
+      "settings": {
+        "textarea": "SO WE REIMAGINED IT <br>FROM THE GROUND UP."
+      }
+    },
+    "5946cfda-62b2-47b0-ab63-9d88d0530691": {
+      "type": "index-07",
+      "blocks": {
+        "185d0f68-a10d-4d69-8222-3e279d5bf8a3": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon09.png",
+            "textarea": "Real fruit instead of added sugar.",
+            "textarea-00": "There are lot’s of reasons to avoid refined sugar, so we use organic dates only to sweeten our ice cream, which is rich in antioxidants and vitamins."
+          }
+        },
+        "72208d75-abb4-4d00-85a8-fcc7bf49ad5f": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon11.png",
+            "textarea": "No artificial ingredients of any kind.",
+            "textarea-00": "There are lot’s of reasons to avoid refined sugar, so we use organic dates only to sweeten our ice cream, which is rich in antioxidants and vitamins."
+          }
+        },
+        "8aa68a16-2ce9-45e4-8b9a-1781a8745b70": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon02.png",
+            "textarea": "Whole, unrefined ingredients.",
+            "textarea-00": "There are lot’s of reasons to avoid refined sugar, so we use organic dates only to sweeten our ice cream, which is rich in antioxidants and vitamins."
+          }
+        }
+      },
+      "block_order": [
+        "185d0f68-a10d-4d69-8222-3e279d5bf8a3",
+        "72208d75-abb4-4d00-85a8-fcc7bf49ad5f",
+        "8aa68a16-2ce9-45e4-8b9a-1781a8745b70"
+      ],
+      "settings": {
+        "heading": "SO WHAT DOES “ACTUALLY PLANT-BASED” EVEN MEAN?",
+        "heading-00": "I’VE HEARD ENOUGH...",
+        "btn": "I WANT PINTS NOW!",
+        "url": ""
+      }
+    }
+  },
+  "order": [
+    "e1533f48-2f2e-4450-bc73-da2dab2f6c50",
+    "ad4b6fa6-1bb3-479f-89d7-ce09e3618e75",
+    "fb8cd542-1cec-4b5f-a456-d8e0201c51e6",
+    "bfcaef0b-e0b4-4589-9c8a-fe88421c5cd6",
+    "290441a5-3ba4-44fe-a174-2d0545a72ce4",
+    "2e5ca511-8aa2-4a98-baaa-16242673cf17",
+    "5946cfda-62b2-47b0-ab63-9d88d0530691"
+  ]
+}

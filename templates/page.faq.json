@@ -1,0 +1,72 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "e54eb883-13df-45af-9736-8621c09bc7c7": {
+      "type": "faq-01",
+      "blocks": {
+        "589a59bf-ed51-4423-b361-97824c593538": {
+          "type": "text",
+          "settings": {
+            "heading": "Website Design and Development",
+            "content": "Whether you need a wordpress website, a shopify site, or a custom fullstack application, we got you! No matter what kind of website or application you need, it will be made with clean and maintable code that follows modern development standards. We also have top notch designers that can make unique designs that will make your website look different and unique. Not to mention that we also provide 24\/7 website maintenance so that you get all the support you need."
+          }
+        },
+        "e93846a6-9105-4565-87c7-b51e5b5ec7e0": {
+          "type": "text",
+          "settings": {
+            "heading": "Website Design and Development",
+            "content": "Whether you need a wordpress website, a shopify site, or a custom fullstack application, we got you! No matter what kind of website or application you need, it will be made with clean and maintable code that follows modern development standards. We also have top notch designers that can make unique designs that will make your website look different and unique. Not to mention that we also provide 24\/7 website maintenance so that you get all the support you need."
+          }
+        },
+        "ba7abb52-ae25-4036-9511-8b376e62faec": {
+          "type": "text",
+          "settings": {
+            "heading": "Website Design and Development",
+            "content": "Whether you need a wordpress website, a shopify site, or a custom fullstack application, we got you! No matter what kind of website or application you need, it will be made with clean and maintable code that follows modern development standards. We also have top notch designers that can make unique designs that will make your website look different and unique. Not to mention that we also provide 24\/7 website maintenance so that you get all the support you need."
+          }
+        },
+        "4a8f9e81-dda9-49fe-81c2-797437ec57da": {
+          "type": "text",
+          "settings": {
+            "heading": "Website Design and Development",
+            "content": "Whether you need a wordpress website, a shopify site, or a custom fullstack application, we got you! No matter what kind of website or application you need, it will be made with clean and maintable code that follows modern development standards. We also have top notch designers that can make unique designs that will make your website look different and unique. Not to mention that we also provide 24\/7 website maintenance so that you get all the support you need."
+          }
+        },
+        "16d0d4d7-f6e6-45cf-92c2-65c74af867d2": {
+          "type": "text",
+          "settings": {
+            "heading": "Website Design and Development",
+            "content": "Whether you need a wordpress website, a shopify site, or a custom fullstack application, we got you! No matter what kind of website or application you need, it will be made with clean and maintable code that follows modern development standards. We also have top notch designers that can make unique designs that will make your website look different and unique. Not to mention that we also provide 24\/7 website maintenance so that you get all the support you need."
+          }
+        },
+        "9bcc3170-bbca-415e-a7dc-115f823ba70d": {
+          "type": "text",
+          "settings": {
+            "heading": "Website Design and Development",
+            "content": "Whether you need a wordpress website, a shopify site, or a custom fullstack application, we got you! No matter what kind of website or application you need, it will be made with clean and maintable code that follows modern development standards. We also have top notch designers that can make unique designs that will make your website look different and unique. Not to mention that we also provide 24\/7 website maintenance so that you get all the support you need."
+          }
+        }
+      },
+      "block_order": [
+        "589a59bf-ed51-4423-b361-97824c593538",
+        "e93846a6-9105-4565-87c7-b51e5b5ec7e0",
+        "ba7abb52-ae25-4036-9511-8b376e62faec",
+        "4a8f9e81-dda9-49fe-81c2-797437ec57da",
+        "16d0d4d7-f6e6-45cf-92c2-65c74af867d2",
+        "9bcc3170-bbca-415e-a7dc-115f823ba70d"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "e54eb883-13df-45af-9736-8621c09bc7c7"
+  ]
+}

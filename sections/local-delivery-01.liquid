@@ -1,0 +1,42 @@
+ <div class="delivery-page">
+    <div class="topbar-del-section">
+      <div class="custom-container">
+        {% if section.settings.textarea != blank %}
+        <h4>{{ section.settings.textarea }}</h4>
+         {% endif %} 
+        {% if section.settings.textarea-00 != blank %}
+        <p>{{ section.settings.textarea-00 }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  
+
+{% schema %}
+  {
+    "name": "local-delivery-01",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "textarea",
+        "label": "First Heading",
+        "default": "NOW <span>ONLY</span> DELIVERING IN NYC"
+      },
+      {
+        "type": "textarea",
+        "id": "textarea-00",
+        "label": "Second Heading",
+        "default": "<strong>NATIONWIDE SHIPPING COMING SOON</strong> | ALWAYS SUSTAINABLY PACKAGED*"
+      }
+    ],
+    "presets": [{"name": "local-delivery-01"}]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+
+{% endjavascript %}

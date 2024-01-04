@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "0747fbfe-bb9b-40ef-84f5-1065e04233db": {
+      "type": "about-01",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/contact-00.jpg",
+        "text": "JOIN OUR MISSION",
+        "url": ""
+      }
+    }
+  },
+  "order": [
+    "0747fbfe-bb9b-40ef-84f5-1065e04233db"
+  ]
+}

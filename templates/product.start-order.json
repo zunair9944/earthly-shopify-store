@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "1c95f3c9-f2e8-4263-a228-1de985dfc6c0": {
+      "type": "start-order-01",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "c55da259-2b74-44c3-9797-63175feaa21c": {
+      "type": "start-order-page",
+      "blocks": {
+        "template--16594551374064__c55da259-2b74-44c3-9797-63175feaa21c-1666204229299b8db8-0": {
+          "type": "product",
+          "settings": {
+            "product": "test-1",
+            "product-img": "shopify:\/\/shop_images\/img3.png"
+          }
+        },
+        "f1ba2764-8bda-4cbf-a0c3-dc0be74e97f8": {
+          "type": "product",
+          "settings": {
+            "product": "test-2",
+            "product-img": "shopify:\/\/shop_images\/img4.png"
+          }
+        },
+        "4d9d1073-440b-4e4e-b3fa-804afc232881": {
+          "type": "product",
+          "settings": {
+            "product": "test-3",
+            "product-img": "shopify:\/\/shop_images\/img1.png"
+          }
+        },
+        "f50426b5-fe68-4e18-8bee-13af80df8970": {
+          "type": "product",
+          "settings": {
+            "product": "test-4",
+            "product-img": "shopify:\/\/shop_images\/img5.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--16594551374064__c55da259-2b74-44c3-9797-63175feaa21c-1666204229299b8db8-0",
+        "f1ba2764-8bda-4cbf-a0c3-dc0be74e97f8",
+        "4d9d1073-440b-4e4e-b3fa-804afc232881",
+        "f50426b5-fe68-4e18-8bee-13af80df8970"
+      ],
+      "settings": {
+        "heading": "BUILD YOUR SELF-CARE PACKAGE",
+        "sub-heading": "*Pick your <a href=\"#\">4-6 pints<\/a> to build your custom case"
+      }
+    }
+  },
+  "order": [
+    "1c95f3c9-f2e8-4263-a228-1de985dfc6c0",
+    "c55da259-2b74-44c3-9797-63175feaa21c"
+  ]
+}

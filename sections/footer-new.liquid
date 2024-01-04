@@ -1,0 +1,157 @@
+  <footer id="footer" class="footer">
+    <div class="custom-container">
+      <div class="columns">
+        
+        <div class="foo_col">
+          <div class="footer-logo">
+            <a href="{{ shop.url }}" title="{{ shop.name }}">
+              {% if section.settings.logo != blank  %}
+                <img src="{{ section.settings.logo | img_url: "x1024" }}" alt="img" loading="lazy">
+              {% else %}
+                  <strong>{{ shop.name }}</strong>
+              {% endif %}
+            </a>
+          </div>
+        {% if section.settings.social_icons == true %}
+          <ul class="social-icons">
+            {% if section.settings.fb_url != blank %}
+            <li><a href="{{ section.settings.fb_url }}"><img src="https://cdn.shopify.com/s/files/1/0647/6840/9840/files/facebook.png?v=1665165490" alt="icon" loading="lazy"></a></li>
+            {% endif %} 
+            {% if section.settings.ig_url != blank %}
+            <li><a href="{{ section.settings.ig_url }}"><img src="https://cdn.shopify.com/s/files/1/0647/6840/9840/files/instagram.png?v=1665165490" alt="icon" loading="lazy"></a></li>
+            {% endif %}
+            {% if section.settings.tw_url != blank %}
+            <li><a href="{{ section.settings.tw_url }}"><img src="https://cdn.shopify.com/s/files/1/0647/6840/9840/files/twitter.png?v=1665165490" alt="icon" loading="lazy"></a></li>
+            {% endif %}
+          </ul>
+        {% endif %} 
+        </div>
+      {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'newsletter' %}
+          
+            <div class="foo_col">
+          {% if block.settings.newsletter_text != blank %}
+              <p>{{ block.settings.newsletter_text }}</p>
+          {% endif %} 
+ 
+<!--               <form class="">
+                <button type="submit">SUBSCRIBE</button>
+                <div class="input_field">
+                  <input type="text" placeholder="Enter Your Email">
+                </div>
+              </form> -->
+      
+ 
+         {%- form 'customer', class: 'subscribe-form' -%}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <div class="newsletter-form__field-wrapper">
+                <button type="submit" name="commit">SUBSCRIBE</button>
+                <div class="input_field">
+                  <input
+                    id="NewsletterForm--{{ section.id }}"
+                    type="email" name="contact[email]" value="{{ form.email }}" aria-required="true" autocorrect="off" autocapitalize="off" autocomplete="email"
+                    {% if form.errors %}
+                      autofocus aria-invalid="true" aria-describedby="ContactFooter-error"
+                    {% elsif form.posted_successfully? %}
+                      aria-describedby="ContactFooter-success"
+                    {% endif %}
+                    placeholder="{{ 'newsletter.label' | t }}" required>
+                </div>
+                {%- if form.errors -%}
+                  <small class="newsletter-form__message form__message" id="ContactFooter-error">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+                {%- endif -%}
+              </div>
+              {%- if form.posted_successfully? -%}
+                <h3 style="color: #fff; text-transform: uppercase;" class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
+              {%- endif -%}
+            {%- endform -%}
+
+    </div>     
+
+
+        
+
+        {% when 'linklist' %}
+        <div class="foo_col">
+          <ul>
+            {% for link in block.settings.link_list.links  %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endcase %}
+      {% endfor %}  
+      </div>
+    </div>
+  </footer>
+
+
+{% schema %}
+  {
+    "name": "Footer-New",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Footer Logo"
+      },
+      {
+        "type": "header",
+        "content": "SOCIAL ICONS"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_icons",
+        "label": "Show/Hide Soical Icons",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "fb_url",
+        "label": "FB Url"
+      },
+      {
+        "type": "url",
+        "id": "ig_url",
+        "label": "IG Url"
+      },
+      {
+        "type": "url",
+        "id": "tw_url",
+        "label": "Twitter Url"
+      }
+    ],
+    "max_blocks":2,
+    "blocks":[
+      {
+        "type": "newsletter",
+        "name": "newsletter",
+        "settings":[
+          {
+            "type": "textarea",
+            "id": "newsletter_text",
+            "label": "Newsletter Heading"
+          }
+        ]
+      },
+      {
+        "type": "linklist",
+        "name": "linklist",
+        "settings":[
+          {
+            "type": "link_list",
+            "id": "link_list",
+            "label": "Footer List"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

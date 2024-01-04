@@ -1,0 +1,105 @@
+  <div class="three-col__parent">
+    <div class="custom-container">
+     <div class="three-section">
+       {% if section.settings.heading != blank %}
+        <h2 class="primary-heading">{{ section.settings.heading }}</h2>
+       {% endif %}  
+        <div class="columns">
+        {% for block in section.blocks %}  
+          <div class="col-block">
+           {% if block.settings.image != blank %} 
+            <div class="img-holder">
+              <img src="{{ block.settings.image | img_url: 'x1024' }}" alt="img" loading="lazy">
+            </div>
+           {% endif %}  
+          {% if block.settings.textarea != blank %}
+            <h4>{{ block.settings.textarea }}</h4>
+          {% endif %}  
+          {% if block.settings.textarea-00 %}
+            <p>{{ block.settings.textarea-00 }}</p>
+          {% endif %}  
+          </div>
+        {% endfor %}  
+        </div>
+      </div>
+      
+      <div class="text-center">
+        {% if section.settings.heading-00 != blank %}
+        <h3>{{ section.settings.heading-00 }}</h3>
+        {% endif %}
+        {% if section.settings.btn != blank %}
+        <a class="theme-large__btn" href="{{ section.settings.url }}">{{ section.settings.btn }}</a>
+       {% endif %}   
+      </div>
+      
+    </div>
+  </div>  
+
+
+
+{% schema %}
+  {
+    "name": "index-07",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "heading",
+        "label": "Top Center Heading",
+        "default": "SO WHAT DOES “ACTUALLY PLANT-BASED” EVEN MEAN?"
+      },
+      {
+        "type": "textarea",
+        "id": "heading-00",
+        "label": "Bottom Center Heading",
+        "default": "I’VE HEARD ENOUGH..."
+      },
+      {
+        "type": "text",
+        "id": "btn",
+        "label": "Button Text",
+        "default": "I WANT PINTS NOW!"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Button Url"
+      }
+    ],
+    "max_blocks": 3,
+    "blocks":[
+      {
+        "type": "image_picker",
+        "name": "Block",
+        "settings":[
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Choose Image"
+          },
+          {
+            "type": "textarea",
+            "id": "textarea",
+            "label": "Block Heading"
+          },
+          {
+            "type": "textarea",
+            "id": "textarea-00",
+            "label": "Block Content",
+            "default": "There are lot’s of reasons to avoid refined sugar, so we use organic dates only to sweeten our ice cream, which is rich in antioxidants and vitamins."
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "index-07"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

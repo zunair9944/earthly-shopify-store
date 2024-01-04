@@ -1,0 +1,69 @@
+  <div class="our-flavour__section">
+    <div class="custom-container">
+      {% if section.settings.heading != blank %}
+      <h2 class="primary-heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+      <div class="columns">
+       {% for product in section.settings.collection.products limit: 4 %} 
+        <div class="fla_col">
+          <a href="{{ product.url }}" class="img-holder">
+            <img src="{{ product.featured_image | img_url: 'x1024' }}" alt="img" loading="lazy">
+          </a>
+          <span>{{ product.title }}</span>
+        </div>
+      {% endfor %}
+      </div>
+      <div class="text-center">
+        {% if section.settings.btn != blank %}
+          <a class="theme-large__btn theme-medium__btn" href="{{ section.settings.url }}">{{ section.settings.btn }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "index-03",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "heading",
+        "label": "Main Heading",
+        "default": "OUR FLAVORS"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Select Collection"
+      },
+      {
+        "type": "text",
+        "id": "btn",
+        "label": "Button Text",
+        "default": "SHOP FLAVORS"
+      },
+      {
+        
+        "type": "url",
+        "id": "url",
+        "label": "Button Url"
+      }
+    ],
+    "presets":[
+      {
+        "name": "index-03"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

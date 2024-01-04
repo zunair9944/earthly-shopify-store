@@ -1,0 +1,81 @@
+  <div class="our-flavour__section">
+    <div class="custom-container">
+      {% if section.settings.heading != blank %}
+      <h2 class="primary-heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+      <div class="columns">
+       {% for block in section.blocks %} 
+        <div class="fla_col">
+         {% if block.settings.flavor != blank %}
+          <div class="img-holder">
+            <img src="{{ block.settings.flavor | img_url: 'x1024' }}" alt="img" loading="lazy">
+          </div>
+         {% endif %}  
+          {% if block.settings.flavor-name != blank %}
+          <span>{{ block.settings.flavor-name }}</span>
+          {% endif %}
+        </div>
+      {% endfor %}
+      </div>
+      <div class="text-center">
+        {% if section.settings.btn != blank %}
+          <a class="theme-large__btn theme-medium__btn" href="{{ section.settings.url }}">{{ section.settings.btn }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+
+{% schema %}
+  {
+    "name": "index-3",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "heading",
+        "label": "Main Heading",
+        "default": "OUR FLAVORS"
+      }, 
+      {
+        "type": "text",
+        "id": "btn",
+        "label": "Button Text",
+        "default": "SHOP FLAVORS"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Button Url"
+      }
+    ],
+    "max_blocks": 4,
+    "blocks":[
+      {
+        "name": "Flavor",
+        "type": "image_picker",
+        "settings":[
+          {
+              "type": "image_picker",
+              "id": "flavor",
+              "label": "Add Flavor"
+          },
+          {
+            "type": "textarea",
+            "id": "flavor-name",
+            "label": "Flavor Name"
+          }
+        ]
+       
+      }
+    ],
+    "presets": [
+      {"name": "index-3"}
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

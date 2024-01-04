@@ -1,0 +1,131 @@
+<div class="delivery-section">
+    <div class="custom-container">
+        {% if section.settings.heading != blank %}
+          <h2 class="primary-heading">{{ section.settings.heading }}</h2>
+        {% endif %}  
+        <div class="delivery-form">
+            <div class="columns">
+                <div class="col">
+                    {% if section.settings.heading-1 != blank %}
+                    <h3>{{ section.settings.heading-1 }}</h3>
+                    {% endif %}
+                    <div class="form-group">
+                        <input id="em-cus-number" maxlength="5" type="number" placeholder="Enter Zip Code" class="deli-field">
+                    </div>
+                </div>
+                <div class="col">
+                    {% if section.settings.image != blank %}
+                    <div class="img-holder">
+                        <img src="{{ section.settings.image | img_url: "x1024" }}" loading="lazy" alt="img">
+                    </div>
+                    {% endif %}  
+                </div>
+            </div>
+            <div class="em-center text-center">
+                {% if section.settings.btn-1 != blank %}
+                <a href="{{ section.settings.url-1 }}" id="em-custom-btn"  class="em-custom-btn theme-smaller__btn">
+                    {{ section.settings.btn-1 }}</a>
+                    {% endif %}
+                {% if section.settings.btn != blank %}
+                  <a class="buy-link" href="{{ section.settings.url }}">{{ section.settings.btn }}</a>
+                {% endif %}  
+            </div>
+        </div>
+    </div>
+</div>
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+  
+  {% assign zipStore = section.settings.zip %}
+   var zipVar = {{ zipStore | json}};
+   var zipArray = zipVar.split(',');
+  $('.em-custom-btn').addClass('active');
+  $("#em-cus-number").keyup(function(event){
+    var abc =0;  
+    var typeNumber = this.value; 
+    zipArray.find((item)=>{
+       if (item == typeNumber ){
+          abc = 1;
+      }
+    });
+    if (abc == 1){
+          $('.em-custom-btn').removeClass('active');
+      }else{
+        $('.em-custom-btn').addClass('active');
+        }  
+  });  
+
+</script>
+
+
+
+{% schema %}
+  {
+    "name": "local-delivery-02",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "heading",
+        "label": "Main Heading",
+        "default": "FREE DELIVERY IN NEW YORK CITY!"
+      },
+      {
+        "type": "textarea",
+        "id": "heading-1",
+        "label": "Secondary Heading",
+        "default": "Want pints now?"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Add Image"
+      },
+       {
+        "type": "text",
+        "id": "btn-1",
+        "label": "Solid Button Text",
+        "default": "START YOUR ORDER"
+      },
+      {
+        "type": "url",
+        "id": "url-1",
+        "label": "Solid Button Url"
+      },
+      {
+        "type": "text",
+        "id": "btn",
+        "label": "Underline Button Text",
+        "default": "Where can I buy in person?"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Undeline Button Url"
+      },
+      {
+        "type": "header",
+        "content": "ENTER ZIP CODES"
+      },
+      {
+        "type": "textarea",
+        "id": "zip",
+        "label": "Enter Zip codes comma separted",
+        "info": "Donot Add Spaces"
+      }
+    ],
+    "presets":[
+      {
+        "name": "local-delivery-02"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+  
+{% endjavascript %}

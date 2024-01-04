@@ -1,0 +1,84 @@
+  <div class="banner">
+    <div class="custom-container">
+      <div class="flex__row">
+        <div class="content-holder">
+          {% if section.settings.heading != blank %}
+          <h1>{{ section.settings.heading }}</h1>
+          {% endif %}  
+          <div>
+            {% if section.settings.btn != blank %}
+            <a class="theme-smaller__btn" href="{{ section.settings.url }}">{{ section.settings.btn }}</a>
+            {% endif %}
+          </div>
+          
+          <ul>
+            {% for block in section.blocks %}
+              {% if block.settings.text != blank %}
+                <li>{{ block.settings.text }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+          
+        </div>
+        {% if section.settings.image != blank %}
+        <div class="img-holder">
+          <img src="{{ section.settings.image | img_url: 'x1024' }}" alt="image" loading="lazy">
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+
+
+{% schema %}
+  {
+    "name": "index-01",
+    "settings": [
+      {
+        "type": "image_picker",
+        "label": "Add Image",
+        "id": "image"
+      },
+      {
+        "type": "textarea",
+        "label": "Main Heading",
+        "id": "heading",
+        "default": "(ACTUALLY) PLANT-BASED FROZEN GOODNESS"
+      },
+      {
+        "type": "text",
+        "label": "Button Text",
+        "id": "btn",
+        "default": "SHOP NOW"
+      },
+      {
+        "type": "url",
+        "label": "Button Url",
+        "id": "url"
+      }
+    ],
+    "max_blocks": 3,
+    "blocks":[
+      {
+        "type": "text",
+        "name": "Feature",
+        "settings":[
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Add Feature",
+            "default": "vegan"
+          }
+        ]
+      }
+    ],
+    "presets":[{"name": "index-01"}]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

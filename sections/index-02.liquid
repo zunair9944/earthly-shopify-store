@@ -1,0 +1,86 @@
+ <div class="ice-cream__flavours">
+    <div class="custom-container">
+      {% if section.settings.heading != blank %}
+      <h2 class="primary-heading">{{ section.settings.heading }}</h2>
+      {% endif %}  
+      
+      <div class="columns">
+      {% for block in section.blocks %}
+        <div class="ice_col">
+        {% if block.settings.image != blank %}
+          <div class="icon-holder">
+            <img src="{{ block.settings.image | img_url: 'x1024' }}" loading="lazy">
+          </div>
+       {% endif %}   
+        {% if block.settings.textarea != blank %}
+          <span>{{ block.settings.textarea }}</span>
+        {% endif %}  
+        </div>
+       {% endfor %} 
+      </div>
+      
+      <div class="text-center">
+        {% if section.settings.btn != blank %}
+        <a class="theme-large__btn" href="{{ section.settings.url }}">{{ section.settings.btn | escape }}</a>
+        {% endif %}  
+      </div>
+      
+    </div>
+  </div>
+
+
+
+{% schema %}
+  {
+    "name": "index-02",
+    "settings": [
+      {
+        "type": "textarea",
+        "label": "Main Heading",
+        "id": "heading",
+        "default": "EVERYTHING YOU THOUGHT ICE CREAM COULD NEVER BE."
+      },
+      {
+        "type": "text",
+        "label": "Button Text",
+        "id": "btn",
+        "default": "LEARN MORE"
+      },
+      {
+        "type": "url",
+        "label": "Button Url",
+        "id": "url"
+      }
+    ],
+    "max_blocks": 8,
+    "blocks":[
+      {
+        "type": "image_picker",
+        "name": "Block",
+        "settings":[
+          {
+            "type": "image_picker",
+            "label": "Add Image",
+            "id": "image"
+          },
+          {
+            "type": "textarea",
+            "label": "Text",
+            "id": "textarea"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "index-02"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

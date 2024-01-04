@@ -1,0 +1,51 @@
+  <div class="about-page">
+    <div class="about-banner">
+      <div class="custom-container">
+       {% if section.settings.image != blank %} 
+        <div class="img-wrap">
+          <img class="img-box" src="{{ section.settings.image | img_url: 'x1024' }}" alt="img" loading="lazy" />
+        </div>
+       {% endif %}  
+      </div>
+    </div>
+    <div class="about-desc">
+      <div class="custom-container">
+        {{ page.content }}
+        {% if section.settings.text != blank %}
+          <div class="text-center">
+            <a class="theme-smaller__btn" href="{{ section.settings.url }}">{{ section.settings.text }}</a>
+          </div>
+        {% endif %} 
+      </div>
+    </div>
+  </div>
+{% schema %}
+  {
+    "name": "about-01",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Choose Image"
+      },
+      {
+        "type": "text",
+        "id":  "text",
+        "label": "Button Text",
+        "default": "JOIN OUR MISSION"
+      },
+      {
+        "type": "url",
+        "id":  "url",
+        "label": "Button Url"
+      }
+    ],
+    "presets": [{"name": "about-01"}]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

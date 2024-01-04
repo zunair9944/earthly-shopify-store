@@ -1,0 +1,69 @@
+  <div class="review-section">
+    <div class="custom-container">
+      {% if section.settings.textarea != blank %}
+      <h2 class="primary-heading">{{ section.settings.textarea }}</h2>
+      {% endif %}  
+      <div class="review-slider homepage-slider">
+      {% for block in section.blocks %}
+        {% if block.settings.richtext != blank %}
+        <div>
+          <div class="card">
+            <ul>
+              {% for i in (1..5) %}
+              <li><i class="fa fa-star"></i></li>
+              {% endfor %}
+            </ul>
+            <p>{{ block.settings.richtext }}</p>
+            <strong>-{{ block.settings.text }}</strong>
+          </div>
+        </div>
+        {% endif %}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+
+
+{% schema %}
+  {
+    "name": "index-04",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "textarea",
+        "label": "Main Heading",
+        "default": "PLANT-BASED = CREAMY??"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Reviews",
+        "settings":[
+          {
+            "type": "textarea",
+            "id": "richtext",
+            "label": "Content",
+            "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Name"
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "index-04"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
